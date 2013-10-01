@@ -1,3 +1,5 @@
+*Harrison fork test
+
 *GENERAL INSTRUCTIONS*
 *--------------------*
 *Set the directory of your preference in the "global" command below
@@ -50,7 +52,7 @@ local covariates "numloance_*_wm highed_wm age3049_wm age5084_wm food_wm serv_wm
 foreach x of any loan savings {
 log using "$a\institutional_results\table4_`x'.log", replace
 
-display "Nº of clients"
+display "Nï¿½ of clients"
 codebook idclient if `x'_restr~=. & dd~=. & sucurs~=. & sale==0 & miss_`x'==1 & promotora~=""
 
 display "SUMMARY STATISTICS" 	
@@ -83,7 +85,7 @@ log close
 foreach var of varlist repayment_new dropout drop_permanent {
 log using "$a\institutional_results\table4_`var'.log", replace
 
-display "*Nº of clients"
+display "*Nï¿½ of clients"
 codebook idclient if `var'~=. & treatment~=. & sucurs~=. & post==1 & sale==0 & promotora~=""
 
 display "SUMMARY STATISTICS" 
@@ -138,7 +140,7 @@ areg kling treatment tred highed sucurs missing3 if post==1 & sale==0, absorb(pr
 *Business size
 areg kling treatment trsizewup sizewup_wm sucurs missing5 if post==1 & sale==0, absorb(promotora) cl(idbank)
 
-*** Nº of clients
+*** Nï¿½ of clients
 
 *Base model
 codebook idclient if kling~=. & post==1 & treatment~=. & sucurs~=. & sale==0 & promotora~=""	
