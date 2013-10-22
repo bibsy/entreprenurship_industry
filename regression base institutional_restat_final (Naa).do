@@ -15,6 +15,9 @@ use "$a\BDS_database_institutional_REStat.dta"
 mkdir "$a\institutional_results"
 set more off
 
+* try to revert back
+* to master
+
 *-------------*
 *DATA ANALYSIS*
 *-------------*
